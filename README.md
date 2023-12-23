@@ -8,7 +8,7 @@ password is displayed on the screen
 
 ## Deployed Website ##
 
-https://annac0rmier.github.io/password-generator/
+(https://annac0rmier.github.io/password-generator/)
 
 ## Technology used ##
 
