@@ -20,66 +20,69 @@
 
 var generateBtn = document.querySelector("#generate")
 
+
 function buttonClick()
-{let uppercase = prompt("should i include uppercase");
-let lowercase = prompt("should i include lowercase");
-let special = prompt("should i include special characters");
-let numeric = prompt("should i include numeric characters");
-let numChar = prompt("how many characters ");
+{
+
+let uppercase = prompt("should the password include uppercase?");
+let lowercase = prompt("should the password include lowercase?");
+let special = prompt("should the password include special characters?");
+let numeric = prompt("should the password include numeric characters?");
+let numChar = prompt("how many characters should the password be?");
+
+
 
 if (uppercase === "yes"){
-  console.log("Including these characters");
-} else{
-  console.log("character type excluded")
+  return {uppercase};
+
 }
 
 if (lowercase === "yes"){
-  console.log("Including these characters");
-} else{
-  console.log("character type excluded")
+ return {lowercase}
 }
 
 if (special === "yes"){
-  console.log("Including these characters");
-} else{
-  console.log("character type excluded")
+ return {special}
 }
 
 if (numeric === "yes"){
-  console.log("Including these characters");
-} else{
-  console.log("character type excluded")
+ return {numeric}
 }
-
   console.log("number of characters", numChar);
-
 }
 
 generateBtn.addEventListener("click", buttonClick);
 
 
 
-var password = generatePassword()
+
+
+function writePassword() 
 
 {
-const upp = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" ];
-const low = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-const spc = ["!", "@", "#", "$," "%", "^", "&", "*" ];
-const numb = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+var chosenChar = buttonClick({ uppercase: "yes", lowercase: "yes", special: "yes", numeric: "yes"});
+var upp = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" ];
+var low = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var spc = ["!", "@", "#", "$", "%", "^", "&", "*" ];
+var numb = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+var password = [""]
 
-if (uppercase === "yes") {
-  
+
+if (chosenChar.uppercase === "yes") {
+  password = password.concat(upp);
+}
+if (chosenChar.lowercase === "yes") {
+  password = password.concact(low);
+}
+if (chosenChar.special === "yes") {
+  password = password.concat(spc);
+}
+if (chosenChar.numChar === "yes") {
+  password = password.concat(numChar);
 }
 }
 
-
-
-
-
-
-
-
-
+console.log(writePassword(password.join ("")));
 
 
 
@@ -105,4 +108,3 @@ if (uppercase === "yes") {
 
 // console.log(password)
 // }
-
